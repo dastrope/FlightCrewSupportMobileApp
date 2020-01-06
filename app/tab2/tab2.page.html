@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>
+      Fuel Burn Calculator
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<style>
+</style>
+
+<ion-content color="dark">
+    <!-- <label>Main Tank
+      <ion-input 
+      class = ".fuelTank"
+      type="number" 
+      [(ngModel)]="mainFuel"></ion-input>
+    </label> -->
+      <ion-button expand="full" color="primary" (click)="addControl()">Add Fuel Tank</ion-button> 
+      <form [formGroup]="myForm">
+          <ion-item *ngFor="let control of myForm.controls | keyvalue">
+            <ion-input required type="number" [formControlName]="control.key"
+             placeHolder="Enter fuel (x to close, v to track)"></ion-input>
+            <ion-icon name="checkmark-circle" (click)="trackControl(control)" ></ion-icon>
+            <ion-icon name="close-circle" (click)="removeControl(control)"></ion-icon>
+          </ion-item>
+        </form>
+    <ion-button (click) ="startCheck()">Start Fuel Check</ion-button>
+    <ion-button (click) ="stopCheck()">Finish Fuel Check</ion-button>
+    <br>
+    <div>
+    <label for="area"><b>Check Details</b></label> <p id="area"></p>
+    <p id = "tracking">Tracking: 0 tanks</p>
+      <p id = "startTime">Check Start Time: </p>
+      <p id = "endTime">Check End Time: </p>
+      <p id = "elapsedtimer">Time Elapsed during Check: </p>
+      <p id = "initial">Initial Total Fuel: </p>
+      <p id = "trackedInitial">Initial Tracked Fuel: </p>
+      <p id = "final">Final Total Fuel: </p>
+      <p id = "trackedFinal">Final Tracked Fuel: </p>
+      <p id = "burnrate">Burnrate (from tracked tanks only): </p>
+      <p id="timer">Time to Burnout: </p>
+      <p id="timer20">20 Minute Reserve: </p>
+      <p id="timer30">30 Minute Reserve: </p>
+    </div>
+</ion-content>

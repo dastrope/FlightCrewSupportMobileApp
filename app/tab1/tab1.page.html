@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>
+      Usage Notes
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+    <ion-card class="welcome-card" color="dark">
+      <ion-img width="100 px" height="100 px" src="/assets/bh.jpg"></ion-img>
+      <ion-card-header>
+        <ion-card-subtitle>Get Started</ion-card-subtitle>
+        <ion-card-title>Flight Crew Support</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>
+          DISCLAIMER: I made this app as a hobby and can not guarantee it will work perfectly in all circumstances. 
+          <br><br>
+          This app is intended to support flight crew service members
+          with aspects of their job. It features a fuel burn calculator and a
+          METAR scraper/decoder. Read below for instructions on their use. Switch tabs to get started.
+        </p>
+      </ion-card-content>
+    </ion-card>
+    <ion-list lines="none">
+      <ion-item color="dark">
+        <ion-icon slot="start" color="medium" name="calculator"></ion-icon>
+        <p><b>Fuel Burn Calculator Documentation</b></p></ion-item>
+      <ion-item color="dark">
+        <p>
+          The fuel burn calculator is based on specifications determined by consulting
+          with an active duty UH-60 Crew Chief. As a result, it may not be usable with other aircraft.<br><br>
+          To begin, create a fuel tank and add a fuel amount to it. If you wish to include this tank in
+          fuel burn rate calculations, select its checkmark icon. You can untrack it in the same way, and
+          can also delete it completely by selecting its close icon. To begin a fuel check, hit the 
+          'Start Fuel Check' button. A timer will start, and count up each second until 'Stop Fuel Check' is pressed.
+          <br><br>Fuel burn rate is determined by taking the tracked fuel amount when the check is started and subtracting 
+          the tracked fuel when it is stopped, then dividing that by the time elapsed during the check. 
+          Time to burnout is then determined by taking the total fuel remaining 
+          (including fuel in untracked tanks) divided by the burn rate, and adding that
+          time to current local time.
+        </p>
+      </ion-item>
+      <ion-item color="dark">
+        <ion-icon slot="start" color="medium" name="globe"></ion-icon>
+        <p><b>METAR Scraper Documentation</b></p></ion-item>
+      <ion-item color="dark">
+        <p>
+        The METAR scraper uses an open source API to grab METAR weather reports from the web.
+        <br><br>
+        If you know the International Civil Aviation (ICAO) identification code for a specific airport
+        or airbase, enter it in the search bar and select the 'Use ICAO Ident' button. Otherwise, 
+        by selecting the 'Use Current Device Location' button the app can also request your current
+        coordinates (your device must allow location services for this) and generate the report
+        for the nearest airport to those coordinates.</p>
+      </ion-item>
+    </ion-list>
+</ion-content>

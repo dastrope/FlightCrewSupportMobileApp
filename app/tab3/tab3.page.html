@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>
+      METAR Reading
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+  <!-- <ion-input [(ngModel)]="ICAO" type="text" autocapitalize> -->
+  <ion-searchbar
+		[(ngModel)]="ICAO"
+    autocomplete="on"
+    autocapitalize="on"
+    placeholder="Enter an ICAO Ident"
+    type="text" color="light"></ion-searchbar>
+  <ion-button expand="full" (click)="getResponseCoords()">Use Current Device Location</ion-button>
+  <ion-button expand="full" (click)="getResponseId()">Use ICAO Ident</ion-button>
+  <p id="station"></p>
+  <p id="metar"></p>
+  <p id="raw"></p>
+</ion-content>
